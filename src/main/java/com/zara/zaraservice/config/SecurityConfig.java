@@ -37,16 +37,15 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-               /* .authorizeHttpRequests(auth -> auth
+               .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/users/register", "/users/login").permitAll()
-                        .requestMatchers("/consultants", "/consultants/**").permitAll() // Autoriser sans authentification
                         .requestMatchers(HttpMethod.GET, "/users/**").permitAll()
-                        .anyRequest().authenticated() // Authentification requise pour tout le reste
-                )*/
-                .authorizeHttpRequests(auth -> auth
-                        .anyRequest().permitAll() // Autoriser toutes les requêtes
+                        .anyRequest().authenticated()
                 )
-                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class); // Ajout du filtre JWT
+                .authorizeHttpRequests(auth -> auth
+                        .anyRequest().permitAll()
+                )
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
