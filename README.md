@@ -43,4 +43,3 @@ Besoin identifié : Il y a une forte demande pour des services accessibles et de
 Accessibilité des smartphones : Avec la démocratisation des smartphones, de plus en plus de Malgaches utilisent des applications mobiles.
 Paiement mobile : Les services financiers via téléphone (Mvola, Orange Money) sont largement utilisés, facilitant les transactions.
 Soutien à l'économie locale : L'application promeut les services locaux et crée des opportunités d'emploi.
-Qu'en penses-tu ? Si tu souhaites développer cette idée, je peux t'aider à approfondir les fonctionnalités ou la mise en œuvre technique.
