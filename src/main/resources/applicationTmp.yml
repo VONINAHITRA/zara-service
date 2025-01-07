@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: zaraservice
+
+  datasource:
+    url: jdbc:postgresql://dpg-ctm3e0q3esus739mv9p0-a:5432/zaraservice
+    username: zaraservice_user
+    password: akWK0pXAV7XtCLdoVxn24qggr518WnSD
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  mail:
+    host: sandbox.smtp.mailtrap.io
+    port: 2525
+    username: 2724b5ebf73982
+    password: 7a79a3f4a988c6
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls.enable: true
+          starttls.required: true
+    default-encoding: UTF-8
+
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: /v1/api/
+
+logging:
+  level:
+    root: info
+    org.springframework: debug
+
+jwt:
+  secret: aVerySecretKeyThatIsAtLeast32Characters!
+  expiration: 3600000
